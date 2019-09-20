@@ -10,35 +10,25 @@ class Solution(object):
         for i in range (wboard):
             for j in range (hboard):
                 if board [i][j] == 'X':
-                    print ('i=%i, j=%i, board[i][j]=%s' % (i, j, board [i][j]))
-                    xcount = 0
-                    for c in list (filter (lambda x: x[0] in range (wboard) and x[1] in range (hboard) and (x[0]==i or x[1]==j) and not (x[0] == i and x[1] == j), [[x,y] for x in [i,i+1,i-1] for y in [j, j-1,j+1]])):
-                        print ('c=', c, board [c[0]][c[1]])
-                        if board [c[0]][c[1]] == 'X':
-                            xcount += 1
-                    if xcount == 0:
-                        print ('Evrika!!! i=%i j=%i xcount=%i' % (i, j, xcount))
+                    # print ('i=%i, j=%i, board[i][j]=%s' % (i, j, board [i][j]))
+                    if (i >= wboard-1 or board [i+1][j] == '.') and (j >= hboard - 1 or board [i][j+1] == '.'):
                         result += 1
-                    elif xcount == 1:
-                        print ('Xyevrika!!! i=%i j=%i xcount=%i' % (i, j, xcount))
-                        result += 0.5
-                    
         return int(result)
                 # print (board [i][j])
 
 z = Solution()
-# b = [
-#         ['.','X','.','.'],
-#         ['.','.','.','X'],
-#         ['.','.','.','X'],
-#         ['X','X','.','.'],
-#     ]
+b = [
+        ['.','X','.','.'],
+        ['.','.','.','X'],
+        ['.','.','.','X'],
+        ['X','X','.','.'],
+    ]
 # b = [
 #     ["X",".",".","X"],
 #     [".",".",".","X"],
 #     [".",".",".","X"]
 # ]
-b = [["X","X","X"]]
+# b = [["X","X","X"]]
 print (z.countBattleships(b))
 
 # i, j, wboard, hboard = 1, 3, 3, 4
