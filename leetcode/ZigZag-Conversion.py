@@ -37,6 +37,6 @@ class Solution(object):
 
 z = Solution()
 
-s = ''
-numRows = 1
+s = "PAYPALISHIRING"
+numRows = 3
 print (z.convert (s, numRows))
