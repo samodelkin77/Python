@@ -19,7 +19,7 @@ class Solution:
             if j > -1:
                 p = s[first:j+1]
                 # print (p)
-                if j - first + 1 > len (res) and self.isStringPolindrom (p):
+                if p == p [::-1]:# j - first + 1 > len (res) and self.isStringPolindrom (p):
                     res = p
                 i = j + 1
             else:
