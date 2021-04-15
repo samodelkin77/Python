@@ -10,9 +10,6 @@ class Solution:
             r [e] = i
             if fh [e] > max_degree:
                 max_degree = fh [e]
-        # print (fh, max_degree)
-        # print (l)
-        # print (r)
         min_length = len (nums)
         for i in fh.keys():
             if fh [i] == max_degree:
